@@ -46,11 +46,21 @@ export default function App() {
     setProducts(list);
   }
 
+  const productsMenssage = products.map(item => `
+    Nome: ${item.name}
+    Valor: ${item.value}
+  `);
+
   const total = () => {
     return products.reduce((acc, cur) => {
       return acc + cur.value
     }, 0);
   }
+
+  const message = `
+    O seu pedido é: ${productsMenssage}
+    valor total: ${total()}
+  `
 
   return (
     <Box backgroundColor="white" flex="1">
@@ -85,12 +95,12 @@ export default function App() {
           <Box>
             <Text>Finalize seu pedido</Text>
             <Text>Total: {total()}</Text>
-            <a href={`https://api.whatsapp.com/send?phone=%999884066688&text=valor${total()}`}>Finalizar</a>
+            <a href={`https://api.whatsapp.com/send?phone=%999884066688&text=${message}`}>Finalizar</a>
           </Box>
         </Box>
       </Box>
       <Box>
-        Footer
+        Mega massa
       </Box>
     </Box>
   );
