@@ -46,10 +46,6 @@ export default function App() {
     setProducts(list);
   }
 
-  const handleCompleteOrder = () => {
-    
-  }
-
   const total = () => {
     return products.reduce((acc, cur) => {
       return acc + cur.value
@@ -69,8 +65,8 @@ export default function App() {
       </Box>
       <Box p="4" flex="1">
         <ScrollView horizontal={false}>
-          {hamburger.map(item => (
-            <Pressable p="4" mb="4" backgroundColor="gray.200" alignContent="center" onPress={() => handleSelect(item)}>
+          {hamburger.map((item, index) => (
+            <Pressable key={index} p="4" mb="4" backgroundColor="gray.200" alignContent="center" onPress={() => handleSelect(item)}>
               <Text>{item.name}</Text>
               <Text>{item.description}</Text>
               <Text>{item.value}</Text>
@@ -79,8 +75,8 @@ export default function App() {
         </ScrollView>
         <Box flex="1" flexDirection="row" justifyContent="space-evenly">
           <Box>
-            {products.map(item => (
-              <Box p="2" flexDirection="row">
+            {products.map((item, index) => (
+              <Box key={index} p="2" flexDirection="row">
                 <Text>{item.name} - </Text>
                 <Text>R$ {item.value}</Text>
               </Box>
