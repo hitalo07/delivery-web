@@ -85,7 +85,7 @@ export default function App() {
           <Box>
             <Text>Finalize seu pedido</Text>
             <Text>Total: {total()}</Text>
-            <a href={`https://api.whatsapp.com/send?phone=%99981965118&text=valor&text=${total()}`}>Finalizar</a>
+            <a href={`https://api.whatsapp.com/send?phone=%999884066688&text=valor${total()}`}>Finalizar</a>
           </Box>
         </Box>
       </Box>
